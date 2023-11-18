@@ -1,0 +1,92 @@
+<div class="container">
+    <h1 class="fs-1 fw-bold text-center animated-string py-2 text-primary mt-2" translate="UserDetails"></h1>
+    <div class="main-body" *ngIf="!(loaderService.isLoading | async)">
+
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
+                                class="rounded-circle" width="130">
+                            <div class="mt-3">
+                                <h2> {{user.name}}</h2>
+                                <h3 class="text-secondary fs-5 mb-1"> {{user.company.name}}</h3>
+                                <p class="text-muted fs-6">{{user.address.street}} , {{user.address.city}} .</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-3 py-3">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-4">
+                                <h3 class="mb-0 fw-bold fs-5" translate="name"></h3>
+                            </div>
+                            <div class="col-8 text-secondary">
+                                <p class="p-0 mt-1 fw-400 fs-6">{{user.name}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                                <h3 class="mb-0 fw-bold fs-5" translate="userName"></h3>
+                            </div>
+                            <div class="col-8 text-secondary">
+                                <p class="p-0 mt-1 fw-400 fs-6">{{user.username}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                                <h3 class="mb-0 fw-bold fs-5" translate="email"></h3>
+                            </div>
+                            <div class="col-8 text-secondary">
+                                <p class="p-0 mt-1 fw-400 fs-6">{{user.email}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                                <h3 class="mb-0 fw-bold fs-5" translate="phone"></h3>
+                            </div>
+                            <div class="col-8 text-secondary">
+                                <p class="p-0 mt-1 fw-400 fs-6">{{user.phone}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                                <h3 class="mb-0 fw-bold fs-5" translate="website"></h3>
+                            </div>
+                            <div class="col-8 text-secondary">
+                                <p class="p-0 mt-1 fw-400 fs-6">{{user.website}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                                <h3 class="mb-0 fw-bold fs-5" translate="company"></h3>
+                            </div>
+                            <div class="col-8 text-secondary">
+                                <p class="p-0 mt-1 fw-400 fs-6">{{user.company.name}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <button class="btn btn-outline-primary fs-5 d-block w-25 m-auto" translate="updated"
+                                (click)="update()"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

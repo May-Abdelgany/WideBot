@@ -1,0 +1,55 @@
+.cover {
+    background-color: black;
+    min-height: 100vh;
+
+    .loginContainer {
+        border-radius: 12px;
+        background: #fffdfd;
+
+        box-shadow: 0px 4px 93px -13px #09c;
+
+        span,
+        .Radio {
+            cursor: pointer;
+        }
+
+        .Radio {
+            font-size: 20px;
+        }
+    }
+
+    .animate-charcter {
+        h1 {
+            font-size: 70px;
+            line-height: 80px;
+            color: #09c;
+        }
+    }
+
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+}
+
+.example-container mat-form-field+mat-form-field {
+    margin-left: 8px;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent;
+}

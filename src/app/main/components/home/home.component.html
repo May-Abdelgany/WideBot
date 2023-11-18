@@ -1,0 +1,11 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer-content>
+        <div class="container-fluid px-0 mt-0">
+            <app-nav></app-nav>
+            <div class="mt-5 pt-2">
+                <router-outlet></router-outlet>
+            </div>
+            <app-loader *ngIf="loaderService.isLoading | async"></app-loader>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

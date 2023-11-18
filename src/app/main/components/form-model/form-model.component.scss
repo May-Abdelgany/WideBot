@@ -1,0 +1,19 @@
+.selectOptions {
+    ::ng-deep .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+        padding-top: 5px;
+        padding-bottom: 0px;
+    }
+
+    ::ng-deep .mat-mdc-select-arrow-wrapper {
+        margin-top: 25px;
+    }
+
+    ::ng-deep .mat-mdc-select-arrow {
+        position: unset !important;
+    }
+}
+
+p {
+    line-height: 30px;
+    padding: 0px 30px !important;
+}

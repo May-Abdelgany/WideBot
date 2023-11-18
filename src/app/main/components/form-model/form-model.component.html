@@ -1,0 +1,62 @@
+<div class=" bg-dark">
+    <h2 mat-dialog-title class="text-center fs-2 fw-bold text-primary pt-2" [translate]="type"></h2>
+    <form [formGroup]="form" (ngSubmit)="submit()" *ngIf="type!='deleteUser'">
+        <mat-dialog-content>
+            <div class="example-container">
+                <mat-form-field class="w-100 px-2  mb-3">
+                    <mat-label translate="userName"></mat-label>
+                    <input class="px-3" matInput formControlName="username">
+                    <mat-error *ngIf="controls['username'].hasError('required')"
+                        translate="usernameRequired"></mat-error>
+                    <mat-error *ngIf="controls['username'].hasError('pattern')" translate="usernameInvalid"></mat-error>
+                </mat-form-field>
+                <mat-form-field class="w-100 px-2  mb-3">
+                    <mat-label translate="name"></mat-label>
+                    <input class="px-3" matInput formControlName="name">
+                    <mat-error *ngIf="controls['name'].hasError('required')" translate="nameRequired"></mat-error>
+                    <mat-error *ngIf="controls['name'].hasError('pattern')" translate="nameInvalid"></mat-error>
+                </mat-form-field>
+            </div>
+            <div class="example-container">
+                <mat-form-field class="w-100 px-2 mb-3">
+                    <mat-label translate="email"></mat-label>
+                    <input class="px-3" matInput formControlName="email">
+                    <mat-error *ngIf="controls['email'].hasError('required')" translate="emailRequired"></mat-error>
+                    <mat-error *ngIf="controls['email'].hasError('pattern')" translate="emailInvalid"></mat-error>
+                </mat-form-field>
+                <mat-form-field class="w-100 px-2 mb-3">
+                    <mat-label translate="phone"></mat-label>
+                    <input class="px-3" matInput formControlName="phone">
+                    <mat-error *ngIf="controls['phone'].hasError('required')" translate="phoneRequired"></mat-error>
+                    <mat-error *ngIf="controls['phone'].hasError('pattern')" translate="phoneInvalid"></mat-error>
+                </mat-form-field>
+            </div>
+            <div class="example-container">
+                <mat-form-field class="w-100 px-2 ">
+                    <mat-label translate="website"></mat-label>
+                    <input class="px-3" matInput formControlName="website">
+                    <mat-error *ngIf="controls['website'].hasError('required')" translate="websiteRequired"></mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="text-center">
+                <button [translate]="sharedData.id?'updated':'add'" class="fs-4 mt-3 fw-500 btn px-5 mx-1" type="submit"
+                    [disabled]="form.invalid" [ngClass]="{
+            'btn-warning':sharedData.id,
+            'btn-primary':!sharedData.id}
+        " [mat-dialog-close]="true"></button>
+                <button [mat-dialog-close]="false" class="fs-4 fw-500 btn btn-light mt-3 px-4 mx-1"
+                    translate="cancle"></button>
+            </div>
+        </mat-dialog-content>
+    </form>
+    <div *ngIf="type=='deleteUser'" class="pb-3">
+        <p class="text-white text-center fs-5 fw-800" translate="accept"></p>
+        <div class="text-center">
+            <button translate="delete" class="fs-4 mt-2 fw-500 btn btn-danger px-5 mx-1" type="submit"
+                [mat-dialog-close]="true" (click)="deleteUser()"></button>
+            <button [mat-dialog-close]="false" class="fs-4 fw-500 btn btn-light mt-2 px-4 mx-1"
+                translate="cancle"></button>
+        </div>
+    </div>
+</div>

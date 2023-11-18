@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-2">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-3" translate="LOGO"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse px-3" id="navbarSupportedContent">
+            <ul class="navbar-nav  mb-2 mb-lg-0 fs-4">
+                <li class="nav-item">
+                    <a class="nav-link  " aria-current="page" routerLink="/main/home"
+                        routerLinkActive="text-primary" translate="Home"></a>
+                </li>
+                <li class="nav-item dropdown px-2">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false" translate="language">
+                    </a>
+                    <ul class="dropdown-menu  " aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item py-1 fs-5" *ngIf="lang=='en'"
+                                (click)="changeLang('ar')">Arabic </a></li>
+                        <li><a class="dropdown-item py-1 fs-5" *ngIf="lang=='ar'"
+                                (click)="changeLang('en')">English</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link  " aria-current="page"   (click)="logout()" translate="logout"></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
